@@ -1,13 +1,44 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vish - Reporte Problemas Urbanos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="content-container">
+            <div class="paper">
+                <h1 class="title">Vish - Reporte Problemas Urbanos</h1>
+
+                <div class="photo-container">
+                    <div id="photoPreview" class="photo-preview hidden">
+                        <img id="capturedImage" alt="Captura" />
+                        <button id="newPhotoBtn" class="button button-light">Tirar Nova Foto</button>
+                    </div>
+
+                    <div id="photoCapture" class="photo-capture">
+                        <p class="text-dimmed">Tire uma foto do problema urbano</p>
+                        <input type="file" accept="image/*" capture="environment" id="cameraInput" style="display: none;">
+                        <label for="cameraInput" class="button button-primary">Abrir Câmera</label>
+                    </div>
+                </div>
+
+                <form id="reportForm" class="form">
+                    <div class="form-group">
+                        <label for="description" class="form-label">Descrição do Problema (opcional)</label>
+                        <input type="text" id="description" class="form-input" placeholder="Descreva o problema urbano que você encontrou">
+                    </div>
+
+                    <button type="submit" class="button button-submit" id="submitBtn">
+                        Enviar Reporte
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
 </html>
