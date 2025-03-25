@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vish - Reporte de Problemas Urbanos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="container">
+            <div class="paper">
+                <h1 class="title">Vish!</h1>
+
+                <div class="content-box">
+                    <div id="successNotification" class="success-notification hidden">
+                        <span>✅ Problema reportado com sucesso!</span>
+                    </div>
+
+                    <div id="photoContainer" class="photo-container">
+                        <div id="noPhotoContent" class="no-photo-content">
+                            <p class="photo-text">Tire uma foto do problema urbano</p>
+                            <input type="file" accept="image/*" capture="environment" id="cameraInput" class="camera-input">
+                            <button class="button button-primary" onclick="document.getElementById('cameraInput').click()">
+                                Abrir Câmera
+                            </button>
+                        </div>
+                        <div id="photoPreview" class="photo-preview hidden">
+                            <img id="capturedImage" alt="Captura">
+                            <button class="button button-secondary" onclick="document.getElementById('cameraInput').click()">
+                                Tirar Nova Foto
+                            </button>
+                        </div>
+                    </div>
+
+                    <form id="reportForm" class="report-form">
+                        <div id="locationStatus" class="location-status hidden">
+                            <div class="location-indicator">
+                                <div id="locationLoading" class="location-loading hidden">
+                                    <div class="loader"></div>
+                                    <span>Obtendo localização...</span>
+                                </div>
+                                <div id="locationSuccess" class="location-success hidden">
+                                    <span>📍 Localização obtida com sucesso</span>
+                                </div>
+                                <div id="locationError" class="location-error hidden"></div>
+                            </div>
+                            <div id="locationAccuracy" class="location-accuracy hidden">
+                                <span>Precisão: <span id="accuracyValue">0</span>m</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Descrição do Problema (opcional)</label>
+                            <input type="text" id="description" placeholder="Descreva o problema urbano que você encontrou">
+                        </div>
+
+                        <button type="submit" id="submitButton" class="button button-submit" disabled>
+                            <span id="submitText">Enviar Reporte</span>
+                            <div id="submitLoader" class="loader hidden"></div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
